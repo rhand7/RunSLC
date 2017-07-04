@@ -16,6 +16,7 @@
 		2AFD835D1F0BE46600274EF6 /* EventsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFD835C1F0BE46600274EF6 /* EventsListTableViewController.swift */; };
 		2AFD835F1F0BE4AB00274EF6 /* MyPlansViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFD835E1F0BE4AB00274EF6 /* MyPlansViewController.swift */; };
 		2AFD83611F0BE4CD00274EF6 /* EventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFD83601F0BE4CD00274EF6 /* EventsTableViewCell.swift */; };
+		2AFD83641F0BF05700274EF6 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFD83631F0BF05700274EF6 /* NetworkController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		2AFD835C1F0BE46600274EF6 /* EventsListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsListTableViewController.swift; sourceTree = "<group>"; };
 		2AFD835E1F0BE4AB00274EF6 /* MyPlansViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPlansViewController.swift; sourceTree = "<group>"; };
 		2AFD83601F0BE4CD00274EF6 /* EventsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTableViewCell.swift; sourceTree = "<group>"; };
+		2AFD83631F0BF05700274EF6 /* NetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 			children = (
 				2AFD833F1F0BE2EA00274EF6 /* AppDelegate.swift */,
 				2AFD83511F0BE30500274EF6 /* Storyboards */,
+				2AFD83621F0BF03C00274EF6 /* Controllers */,
 				2AFD83571F0BE34900274EF6 /* Models */,
 				2AFD83551F0BE33400274EF6 /* ModelControllers */,
 				2AFD83541F0BE32A00274EF6 /* ViewControllers */,
@@ -122,6 +125,14 @@
 				2AFD83581F0BE3D400274EF6 /* Event.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		2AFD83621F0BF03C00274EF6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2AFD83631F0BF05700274EF6 /* NetworkController.swift */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,6 +213,7 @@
 				2AFD83401F0BE2EA00274EF6 /* AppDelegate.swift in Sources */,
 				2AFD835D1F0BE46600274EF6 /* EventsListTableViewController.swift in Sources */,
 				2AFD83611F0BE4CD00274EF6 /* EventsTableViewCell.swift in Sources */,
+				2AFD83641F0BF05700274EF6 /* NetworkController.swift in Sources */,
 				2AFD835B1F0BE3DD00274EF6 /* EventController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
