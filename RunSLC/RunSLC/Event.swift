@@ -23,7 +23,7 @@ class Event {
     fileprivate let descriptionTextKey = "text"
     
     fileprivate let logoDictionaryKey = "logo"
-//    fileprivate let imageDictionaryKey = "original"
+    fileprivate let imageDictionaryKey = "original"
     fileprivate let imageEndpointKey = "url"
     
     //     MARK: - Properties
@@ -31,8 +31,10 @@ class Event {
     let eventNameText: String
     let date: String
     let descriptionText: String
-    let imageEndpoint: String
-    var image: UIImage?
+    let imageCroppedEndpoint: String
+    let imageOriginalEndpoint: String
+    var croppedImage: UIImage?
+    var originalImage: UImage? 
     
     //Initializers
     
@@ -48,13 +50,15 @@ class Event {
             let descriptionText = descriptionDictionary[descriptionTextKey] as? String,
             
             let logoDictionary = jsonDictionary[logoDictionaryKey] as? [String: Any],
-//            let imageDictionary = logoDictionary[imageDictionaryKey] as? [String: Any],
-            let imageURL = logoDictionary[imageEndpointKey] as? String else { return nil }
+            let imageDictionary = logoDictionary[imageDictionaryKey] as? [String: Any],
+            let imageOriginalURL = imageDictionary[imageDictionaryKey] as? String,
+            let imageCroppedURL = logoDictionary[imageEndpointKey] as? String else { return nil }
         
         self.eventNameText = eventNameText
         self.date = date
         self.descriptionText = descriptionText
-        self.imageEndpoint = imageURL
+        self.imageCroppedEndpoint = imageCroppedURL
+        self.imageOriginalEndpoint = imageOriginalURL  
     }
     
 }

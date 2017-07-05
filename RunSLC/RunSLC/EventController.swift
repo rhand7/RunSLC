@@ -64,10 +64,16 @@ class EventController {
                 group.enter()
                 count += 1
                 print(count)
-                let imageURL = event.imageEndpoint
                 
-                ImageController.image(forURL: imageURL, completion: { (image) in
-                    event.image = image
+                let croppedImageURL = event.imageCroppedEndpoint
+                let originalImageURL = event.imageOriginalEndpoint
+                
+                ImageController.image(forURL: originalImageURL, completion: { (originalImage) in
+                    event.originalImage = originalImage 
+                })
+                
+                ImageController.image(forURL: croppedImageURL, completion: { (croppedImage) in
+                    event.croppedImage = croppedImage
                     
                     count -= 1
                     print(count)

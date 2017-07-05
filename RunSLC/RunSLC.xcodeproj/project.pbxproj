@@ -18,6 +18,7 @@
 		2AFD83611F0BE4CD00274EF6 /* EventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFD83601F0BE4CD00274EF6 /* EventsTableViewCell.swift */; };
 		2AFD83641F0BF05700274EF6 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFD83631F0BF05700274EF6 /* NetworkController.swift */; };
 		2AFD83661F0D4F2D00274EF6 /* ImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFD83651F0D4F2D00274EF6 /* ImageController.swift */; };
+		2AFD83681F0D63CF00274EF6 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFD83671F0D63CF00274EF6 /* EventDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		2AFD83601F0BE4CD00274EF6 /* EventsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTableViewCell.swift; sourceTree = "<group>"; };
 		2AFD83631F0BF05700274EF6 /* NetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		2AFD83651F0D4F2D00274EF6 /* ImageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageController.swift; sourceTree = "<group>"; };
+		2AFD83671F0D63CF00274EF6 /* EventDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				2AFD835C1F0BE46600274EF6 /* EventsListTableViewController.swift */,
+				2AFD83671F0D63CF00274EF6 /* EventDetailViewController.swift */,
 				2AFD835E1F0BE4AB00274EF6 /* MyPlansViewController.swift */,
 			);
 			name = ViewControllers;
@@ -214,6 +217,7 @@
 				2AFD835F1F0BE4AB00274EF6 /* MyPlansViewController.swift in Sources */,
 				2AFD83591F0BE3D400274EF6 /* Event.swift in Sources */,
 				2AFD83401F0BE2EA00274EF6 /* AppDelegate.swift in Sources */,
+				2AFD83681F0D63CF00274EF6 /* EventDetailViewController.swift in Sources */,
 				2AFD835D1F0BE46600274EF6 /* EventsListTableViewController.swift in Sources */,
 				2AFD83611F0BE4CD00274EF6 /* EventsTableViewCell.swift in Sources */,
 				2AFD83641F0BF05700274EF6 /* NetworkController.swift in Sources */,
