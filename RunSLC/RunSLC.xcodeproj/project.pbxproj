@@ -17,6 +17,7 @@
 		2AFD835F1F0BE4AB00274EF6 /* MyPlansViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFD835E1F0BE4AB00274EF6 /* MyPlansViewController.swift */; };
 		2AFD83611F0BE4CD00274EF6 /* EventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFD83601F0BE4CD00274EF6 /* EventsTableViewCell.swift */; };
 		2AFD83641F0BF05700274EF6 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFD83631F0BF05700274EF6 /* NetworkController.swift */; };
+		2AFD83661F0D4F2D00274EF6 /* ImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFD83651F0D4F2D00274EF6 /* ImageController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		2AFD835E1F0BE4AB00274EF6 /* MyPlansViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPlansViewController.swift; sourceTree = "<group>"; };
 		2AFD83601F0BE4CD00274EF6 /* EventsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTableViewCell.swift; sourceTree = "<group>"; };
 		2AFD83631F0BF05700274EF6 /* NetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
+		2AFD83651F0D4F2D00274EF6 /* ImageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				2AFD835A1F0BE3DD00274EF6 /* EventController.swift */,
+				2AFD83651F0D4F2D00274EF6 /* ImageController.swift */,
 			);
 			name = ModelControllers;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 				2AFD83611F0BE4CD00274EF6 /* EventsTableViewCell.swift in Sources */,
 				2AFD83641F0BF05700274EF6 /* NetworkController.swift in Sources */,
 				2AFD835B1F0BE3DD00274EF6 /* EventController.swift in Sources */,
+				2AFD83661F0D4F2D00274EF6 /* ImageController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

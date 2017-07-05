@@ -37,16 +37,9 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YKp-h6-DDV">
-                                            <rect key="frame" x="307" y="1" width="60" height="21"/>
+                                            <rect key="frame" x="189" y="61" width="60" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EkE-GK-hya">
-                                            <rect key="frame" x="189" y="60" width="65" height="24"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -55,7 +48,6 @@
                                 <connections>
                                     <outlet property="eventDateLabel" destination="YKp-h6-DDV" id="Rrs-uj-0k0"/>
                                     <outlet property="eventImage" destination="Djc-OJ-ojH" id="VrB-gw-vh6"/>
-                                    <outlet property="eventLocationLabel" destination="EkE-GK-hya" id="wht-DR-vlc"/>
                                     <outlet property="eventNameLabel" destination="bHI-cN-N33" id="fNS-sw-dbC"/>
                                 </connections>
                             </tableViewCell>

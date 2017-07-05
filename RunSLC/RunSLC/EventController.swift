@@ -16,9 +16,11 @@ class EventController {
     
     static let baseURLEventbrite = URL(string: "https://www.eventbriteapi.com/v3/events/search/")
     
+//    static let baseURLMeetup = URL(string: "https://api.meetup.com/SaltLakeRunningClub/events?photo-host=public&page=20&sig_id=195974553&sig=731153fb91cd71a8c9e8d32d6d1c121a049a37e1")
+    
     // MARK: - fetchEventbrite
     
-    static func fetchEventbriteEvent(completion: @escaping ((_: [Event]) -> Void)) {
+    static func fetchEventbriteEvents(completion: @escaping ((_: [Event]) -> Void)) {
         
         guard let url = baseURLEventbrite else { fatalError("URL optional is nil") }
         
@@ -50,8 +52,23 @@ class EventController {
                         completion([])
                         return
                 }
-                let events = eventsDictionaries.flatMap { Event(jsonDictionary: $0) }
+            
+            let events = eventsDictionaries.flatMap { Event(jsonDictionary: $0) }
+            
+            guard let imageURL = events.imageEndpoint else { completion([]); return }
+            
+            ImageController.image(forURL: imageURL, completion: { (image) in
+                events?.image = image
                 completion(events)
+            })
         }
     }
+    
+    // MARK: - fetchMeetup
+    
+//    static func fetchMeetupEvents(completion: @escaping ((_: [Event]) -> Void)) {
+//        guard let url = baseURLMeetup else { fatalError("URL optional is nil") }
+//        
+//        let url
+//    }
 }

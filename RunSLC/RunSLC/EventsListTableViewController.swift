@@ -9,6 +9,16 @@
 import UIKit
 
 class EventsListTableViewController: UITableViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        EventController.fetchEventbriteEvents { (events) in
+            self.eventResults = events
+            DispatchQueue.main.async {
+                self.tableView.reloadData()  
+            }
+        }
+    }
 
     var eventResults = [Event]() {
         didSet {
@@ -20,9 +30,9 @@ class EventsListTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 0
-    }
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        return 0
+//    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return eventResults.count 
