@@ -23,7 +23,7 @@ class Event {
     fileprivate let descriptionTextKey = "text"
     
     fileprivate let logoDictionaryKey = "logo"
-    fileprivate let imageDictionaryKey = "original"
+//    fileprivate let imageDictionaryKey = "original"
     fileprivate let imageEndpointKey = "url"
     
     //     MARK: - Properties
@@ -48,8 +48,8 @@ class Event {
             let descriptionText = descriptionDictionary[descriptionTextKey] as? String,
             
             let logoDictionary = jsonDictionary[logoDictionaryKey] as? [String: Any],
-            let imageDictionary = logoDictionary[imageDictionaryKey] as? [String: Any],
-            let imageURL = imageDictionary[imageEndpointKey] as? String else { return nil }
+//            let imageDictionary = logoDictionary[imageDictionaryKey] as? [String: Any],
+            let imageURL = logoDictionary[imageEndpointKey] as? String else { return nil }
         
         self.eventNameText = eventNameText
         self.date = date

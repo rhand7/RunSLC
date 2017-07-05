@@ -20,18 +20,14 @@ class ImageController {
             return
         }
         
-        NetworkController.performRequest(for: url, httpMethod: .get) { (data, error) in
-            
-            guard let data = data,
-                let image = UIImage(data: data) else {
-                    print("No data")
-                    
-                    DispatchQueue.main.async { completion(nil) }
-                    return
-            }
-            
-            DispatchQueue.main.async { completion(image) }
+        guard let data = try? Data(contentsOf: url),
+            let image = UIImage(data: data) else {
+                print("No data")
+                
+                DispatchQueue.main.async { completion(nil) }
+                return
         }
+        
+        DispatchQueue.main.async { completion(image) }
     }
 }
- 
