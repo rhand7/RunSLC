@@ -17,6 +17,6 @@ class EventsTableViewCell: UITableViewCell {
     func updateEventCell(event: Event) {
         eventNameLabel.text = event.eventNameText
         eventDateLabel.text = event.date
-        eventImage.image = event.croppedImage 
+        eventImage.image = event.image  
     } 
 }

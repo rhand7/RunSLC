@@ -28,7 +28,7 @@ class EventDetailViewController: UIViewController {
     
     func updateViews() {
         if let event = event {
-            eventImage?.image = event.originalImage 
+            eventImage?.image = event.image
             eventNameLabel?.text = event.eventNameText
             eventDescriptionLabel?.text = event.descriptionText
         }
