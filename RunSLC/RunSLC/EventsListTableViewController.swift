@@ -13,9 +13,16 @@ class EventsListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         EventController.fetchEventbriteEvents { (events) in
-            self.eventResults = events
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
+            
+            var eventResults: [Event] = []
+            
+            eventResults.append(contentsOf: events)
+            
+            EventController.fetchActiveEvents { (events) in
+                
+                eventResults.append(contentsOf: events)
+                
+                self.eventResults = eventResults
             }
         }
     }
@@ -40,11 +47,11 @@ class EventsListTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as? EventsTableViewCell else { return EventsTableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as? EventsTableViewCell else { return UITableViewCell() }
         
         let event = eventResults[indexPath.row]
         
-        cell.updateEventCell(event: event)
+        cell.event = event
         
         return cell
     }

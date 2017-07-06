@@ -10,11 +10,7 @@ import UIKit
 
 class EventDetailViewController: UIViewController {
     
-    var event: Event? {
-        didSet {
-            updateViews()
-        }
-    }
+    var event: Event? 
     
     @IBOutlet weak var eventImage: UIImageView!
     @IBOutlet weak var eventNameLabel: UILabel!
@@ -25,12 +21,28 @@ class EventDetailViewController: UIViewController {
         super.viewDidLoad()
         updateViews()
     }
-    
     func updateViews() {
-        if let event = event {
-            eventImage?.image = event.image
-            eventNameLabel?.text = event.eventNameText
-            eventDescriptionLabel?.text = event.descriptionText
-        }
+        guard let event = event else { return }
+        
+        eventImage.image = event.image
+        eventNameLabel.text = event.nameText
+        eventDescriptionLabel.text = event.descriptionText
     }
+    
+    //
+    //    func updateEventbrite() {
+    //        if let eventbriteEvent = event {
+    //            eventImage?.image = eventbriteEvent.eventbriteImage
+    //            eventNameLabel?.text = eventbriteEvent.eventbriteNameText
+    //            eventDescriptionLabel?.text = eventbriteEvent.eventbriteDescriptionText
+    //        }
+    //    }
+    //
+    //    func updateActiveEvent() {
+    //        if let activeEvent = event {
+    //            eventImage?.image = activeEvent.activeImage
+    //            eventNameLabel.text = activeEvent.activeNameText
+    //            eventDescriptionLabel.text = activeEvent.activeDescriptionText
+    //        }
+    //    }
 }

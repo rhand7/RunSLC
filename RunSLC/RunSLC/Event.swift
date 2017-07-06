@@ -13,48 +13,80 @@ class Event {
     
     // MARK: - Keys
     
-    fileprivate let eventNameDictionaryKey = "name"
-    fileprivate let eventNameTextKey = "text"
+    fileprivate let eventbriteNameDictionaryKey = "name"
+    fileprivate let eventbriteNameTextKey = "text"
     
-    fileprivate let dateDictionaryKey = "start"
-    fileprivate let dateTimeKey = "local"
+    fileprivate let eventbriteDateDictionaryKey = "start"
+    fileprivate let eventbriteDateTimeKey = "local"
     
-    fileprivate let descriptionDictionaryKey = "description"
-    fileprivate let descriptionTextKey = "text"
+    fileprivate let eventbriteDescriptionDictionaryKey = "description"
+    fileprivate let eventbriteDescriptionTextKey = "text"
     
-    fileprivate let logoDictionaryKey = "logo"
-//    fileprivate let imageDictionaryKey = "original"
-    fileprivate let imageEndpointKey = "url"
+    fileprivate let eventbriteImageEndpointKey = "url"
+    
+    fileprivate let activeEventNameKey = "assetName"
+    fileprivate let activeImageURLKey = "logoUrlAdr"
+    
+    fileprivate let activeEventURLKey = "homePageUrlAdr"
+    fileprivate let activeDescriptionDictionaryKey = "assetDescriptions"
+    fileprivate let activeDescriptionNumberKey = "0"
     
     //     MARK: - Properties
     
-    let eventNameText: String
-    let date: String
+    let nameText: String
+    let date: String?
     let descriptionText: String
     let imageEndpoint: String
     var image: UIImage?
     
+//    let activeNameText: String
+//    let activeDescriptionText: String
+//    let activeImageEndpoint: String
+//    var activeImage: UIImage?
+    
     //Initializers
     
-    init?(jsonDictionary: [String: Any]) {
-        
-        guard let eventNameDictionary = jsonDictionary[eventNameDictionaryKey] as? [String: Any],
-            let eventNameText = eventNameDictionary[eventNameTextKey] as? String,
-            
-            let dateDictionary = jsonDictionary[dateDictionaryKey] as? [String: Any],
-            let date = dateDictionary[dateTimeKey] as? String,
-            
-            let descriptionDictionary = jsonDictionary[descriptionDictionaryKey] as? [String: Any],
-            let descriptionText = descriptionDictionary[descriptionTextKey] as? String,
-            
-            let logoDictionary = jsonDictionary[logoDictionaryKey] as? [String: Any],
-//            let imageDictionary = logoDictionary[imageDictionaryKey] as? [String: Any],
-            let imageURL = logoDictionary[imageEndpointKey] as? String else { return nil }
-        
-        self.eventNameText = eventNameText
-        self.date = date
-        self.descriptionText = descriptionText
-        self.imageEndpoint = imageURL
-    }
+//    init(eventbriteNameText: String, eventbriteDate: String, eventbriteDescriptionText: String, eventbriteImageEndpoint: String, eventbriteImage: UIImage?, activeNameText: String, activeDescriptionText: String, activeImageEndpoint: String, activeImage: UIImage?) {
+//        
+//        self.eventbriteNameText = eventbriteNameText
+//        self.eventbriteDate = eventbriteDate
+//        self.eventbriteDescriptionText = eventbriteDescriptionText
+//        self.eventbriteImageEndpoint = eventbriteImageEndpoint
+//        self.eventbriteImage = eventbriteImage
+//        
+//        self.activeNameText = activeNameText
+//        self.activeDescriptionText = activeDescriptionText
+//        self.activeImageEndpoint = activeImageEndpoint
+//        self.activeImage = activeImage
+//    }
     
+    init?(eventbriteJSONDictionary: [String: Any]) {
+        
+        guard let eventbriteNameDictionary = eventbriteJSONDictionary[eventbriteNameDictionaryKey] as? [String: Any],
+            let eventbriteNameText = eventbriteNameDictionary[eventbriteNameTextKey] as? String,
+            let eventbriteDateDictionary = eventbriteJSONDictionary[eventbriteDateDictionaryKey] as? [String: Any],
+            let eventbriteDate = eventbriteDateDictionary[eventbriteDateTimeKey] as? String,
+            let eventbriteDescriptionDictionary = eventbriteJSONDictionary[eventbriteDescriptionDictionaryKey] as? [String: Any],
+            let eventbriteDescriptionText = eventbriteDescriptionDictionary[eventbriteDescriptionTextKey] as? String,
+            let eventbriteImageEndpoint = eventbriteJSONDictionary[eventbriteImageEndpointKey] as? String else { return nil }
+        
+        self.nameText = eventbriteNameText
+        self.date = eventbriteDate
+        self.descriptionText = eventbriteDescriptionText
+        self.imageEndpoint = eventbriteImageEndpoint
+    }
+//    
+    init?(activeJSONDictionary: [String: Any]) {
+        guard let activeEventText = activeJSONDictionary[activeEventNameKey] as? String,
+            let activeImageEndpoint = activeJSONDictionary[activeImageURLKey] as? String,
+            let activeDescriptionDict = activeJSONDictionary[activeDescriptionDictionaryKey] as? [[String: Any]],
+            let activeDescriptionText = activeDescriptionDict.map { (activeDescriptionNumberKey: $0) } as? String else { return nil }
+        
+        self.nameText = activeEventText
+        self.imageEndpoint = activeImageEndpoint
+        self.descriptionText = activeDescriptionText
+        self.date = ""
+    }
 }
+
+

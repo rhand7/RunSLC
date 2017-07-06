@@ -55,7 +55,7 @@ class EventController {
                     return
             }
             
-            let events = eventsDictionaries.flatMap { Event(jsonDictionary: $0) }
+            let events = eventsDictionaries.flatMap { Event(eventbriteJSONDictionary: $0) }
             
             
             let group = DispatchGroup()
@@ -68,8 +68,8 @@ class EventController {
                 print(count)
                 let imageURL = event.imageEndpoint
                 
-                ImageController.image(forURL: imageURL, completion: { (image) in
-                    event.image = image
+                ImageController.image(forURL: imageURL, completion: { (eventbriteImage) in
+                    event.image = eventbriteImage
                     
                     count -= 1
                     print(count)
@@ -88,7 +88,7 @@ class EventController {
     
     // MARK: - fetchActive
     
-    static func fetchEActiveEvents(completion: @escaping ((_: [Event]) -> Void)) {
+    static func fetchActiveEvents(completion: @escaping ((_: [Event]) -> Void)) {
         
         guard let url = baseURLActive else { fatalError("URL optional is nil") }
         
@@ -96,7 +96,8 @@ class EventController {
                              "query": "running",
                              "category": "event",
                              "near": "Salt%20Lake%20City,UT,US",
-                             "radius": "50"]
+                             "radius": "50",
+                             "start_date": "2017-07-06.."]
         
         NetworkController.performRequest(for: url, httpMethod: .get, urlParameters: urlParameters, body: nil) { (data, error) in
             
@@ -114,13 +115,13 @@ class EventController {
             }
             
             guard let responseDictionary = (try? JSONSerialization.jsonObject(with: data, options: .allowFragments)) as? [String: Any],
-                let eventsDictionaries = responseDictionary["events"] as? [[String: Any]] else {
+                let eventsDictionaries = responseDictionary["results"] as? [[String: Any]] else {
                     NSLog("Unable to serialize JSON. \nResponse: \(responseDataString)")
                     completion([])
                     return
             }
             
-            let events = eventsDictionaries.flatMap { Event(jsonDictionary: $0) }
+            let events = eventsDictionaries.flatMap { Event(activeJSONDictionary: $0) }
             
             
             let group = DispatchGroup()
@@ -133,8 +134,8 @@ class EventController {
                 print(count)
                 let imageURL = event.imageEndpoint
                 
-                ImageController.image(forURL: imageURL, completion: { (image) in
-                    event.image = image
+                ImageController.image(forURL: imageURL, completion: { (activeImage) in
+                    event.image = activeImage
                     
                     count -= 1
                     print(count)
