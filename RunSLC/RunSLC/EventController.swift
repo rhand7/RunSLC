@@ -5,6 +5,7 @@
 //  Created by handje on 7/4/17.
 //  Copyright © 2017 Rob Hand. All rights reserved.
 //
+//    static let baseURLMeetup = URL(string: "https://api.meetup.com/SaltLakeRunningClub/events?photo-host=public&page=20&sig_id=195974553&sig=731153fb91cd71a8c9e8d32d6d1c121a049a37e1")
 
 import Foundation
 
@@ -15,8 +16,6 @@ class EventController {
     // MARK: - baseURL
     
     static let baseURLEventbrite = URL(string: "https://www.eventbriteapi.com/v3/events/search/")
-    
-    static let baseURLMeetup = URL(string: "https://api.meetup.com/SaltLakeRunningClub/events?photo-host=public&page=20&sig_id=195974553&sig=731153fb91cd71a8c9e8d32d6d1c121a049a37e1")
     
     static let baseURLActive = URL(string: "http://api.amp.active.com/v2/search")
     
@@ -97,7 +96,9 @@ class EventController {
                              "category": "event",
                              "near": "Salt%20Lake%20City,UT,US",
                              "radius": "50",
-                             "start_date": "2017-07-06.."]
+                             "start_date": "2017-07-07..",
+                             "sort": "date_asc",
+                             "per_page": "100"]  
         
         NetworkController.performRequest(for: url, httpMethod: .get, urlParameters: urlParameters, body: nil) { (data, error) in
             
@@ -151,13 +152,13 @@ class EventController {
             
         }
     }
-
+    
     
     // MARK: - fetchMeetup
     
-//    static func fetchMeetupEvents(completion: @escaping ((_: [Event]) -> Void)) {
-//        guard let url = baseURLMeetup else { fatalError("URL optional is nil") }
-//        
-//        let urlParameters =
-//    }
+    //    static func fetchMeetupEvents(completion: @escaping ((_: [Event]) -> Void)) {
+    //        guard let url = baseURLMeetup else { fatalError("URL optional is nil") }
+    //
+    //        let urlParameters =
+    //    }
 }

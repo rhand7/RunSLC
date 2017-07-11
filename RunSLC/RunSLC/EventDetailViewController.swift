@@ -28,21 +28,4 @@ class EventDetailViewController: UIViewController {
         eventNameLabel.text = event.nameText
         eventDescriptionLabel.text = event.descriptionText
     }
-    
-    //
-    //    func updateEventbrite() {
-    //        if let eventbriteEvent = event {
-    //            eventImage?.image = eventbriteEvent.eventbriteImage
-    //            eventNameLabel?.text = eventbriteEvent.eventbriteNameText
-    //            eventDescriptionLabel?.text = eventbriteEvent.eventbriteDescriptionText
-    //        }
-    //    }
-    //
-    //    func updateActiveEvent() {
-    //        if let activeEvent = event {
-    //            eventImage?.image = activeEvent.activeImage
-    //            eventNameLabel.text = activeEvent.activeNameText
-    //            eventDescriptionLabel.text = activeEvent.activeDescriptionText
-    //        }
-    //    }
 }

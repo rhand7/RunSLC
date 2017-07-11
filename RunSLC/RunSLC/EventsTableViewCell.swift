@@ -23,19 +23,7 @@ class EventsTableViewCell: UITableViewCell {
     func updateViews() {
         guard let event = event else { return }
         eventNameLabel.text = event.nameText
-//        eventDateLabel.text = eventbriteEvent.eventbriteDate
         eventImage.image = event.image
 
     }
-//    
-//    func updateEventbriteCell(eventbriteEvent: Event) {
-//        eventNameLabel.text = eventbriteEvent.eventbriteNameText
-//        eventDateLabel.text = eventbriteEvent.eventbriteDate
-//        eventImage.image = eventbriteEvent.eventbriteImage
-//    }
-//    
-//    func updateActiveCell(activeEvent: Event) {
-//        eventNameLabel.text = activeEvent.activeNameText
-//        eventImage.image = activeEvent.activeImage 
-//    }
 }

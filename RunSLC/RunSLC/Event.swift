@@ -22,6 +22,7 @@ class Event {
     fileprivate let eventbriteDescriptionDictionaryKey = "description"
     fileprivate let eventbriteDescriptionTextKey = "text"
     
+    fileprivate let eventbriteLogoKey = "logo"
     fileprivate let eventbriteImageEndpointKey = "url"
     
     fileprivate let activeEventNameKey = "assetName"
@@ -29,63 +30,38 @@ class Event {
     
     fileprivate let activeEventURLKey = "homePageUrlAdr"
     fileprivate let activeDescriptionDictionaryKey = "assetDescriptions"
-    fileprivate let activeDescriptionNumberKey = "0"
     
     //     MARK: - Properties
     
     let nameText: String
-    let date: String?
     let descriptionText: String
     let imageEndpoint: String
     var image: UIImage?
-    
-//    let activeNameText: String
-//    let activeDescriptionText: String
-//    let activeImageEndpoint: String
-//    var activeImage: UIImage?
-    
-    //Initializers
-    
-//    init(eventbriteNameText: String, eventbriteDate: String, eventbriteDescriptionText: String, eventbriteImageEndpoint: String, eventbriteImage: UIImage?, activeNameText: String, activeDescriptionText: String, activeImageEndpoint: String, activeImage: UIImage?) {
-//        
-//        self.eventbriteNameText = eventbriteNameText
-//        self.eventbriteDate = eventbriteDate
-//        self.eventbriteDescriptionText = eventbriteDescriptionText
-//        self.eventbriteImageEndpoint = eventbriteImageEndpoint
-//        self.eventbriteImage = eventbriteImage
-//        
-//        self.activeNameText = activeNameText
-//        self.activeDescriptionText = activeDescriptionText
-//        self.activeImageEndpoint = activeImageEndpoint
-//        self.activeImage = activeImage
-//    }
     
     init?(eventbriteJSONDictionary: [String: Any]) {
         
         guard let eventbriteNameDictionary = eventbriteJSONDictionary[eventbriteNameDictionaryKey] as? [String: Any],
             let eventbriteNameText = eventbriteNameDictionary[eventbriteNameTextKey] as? String,
-            let eventbriteDateDictionary = eventbriteJSONDictionary[eventbriteDateDictionaryKey] as? [String: Any],
-            let eventbriteDate = eventbriteDateDictionary[eventbriteDateTimeKey] as? String,
             let eventbriteDescriptionDictionary = eventbriteJSONDictionary[eventbriteDescriptionDictionaryKey] as? [String: Any],
             let eventbriteDescriptionText = eventbriteDescriptionDictionary[eventbriteDescriptionTextKey] as? String,
-            let eventbriteImageEndpoint = eventbriteJSONDictionary[eventbriteImageEndpointKey] as? String else { return nil }
+            let eventbriteLogo = eventbriteJSONDictionary[eventbriteLogoKey] as? [String: Any],
+            let eventbriteImageEndpoint = eventbriteLogo[eventbriteImageEndpointKey] as? String else { return nil }
         
         self.nameText = eventbriteNameText
-        self.date = eventbriteDate
         self.descriptionText = eventbriteDescriptionText
         self.imageEndpoint = eventbriteImageEndpoint
     }
-//    
+    
     init?(activeJSONDictionary: [String: Any]) {
         guard let activeEventText = activeJSONDictionary[activeEventNameKey] as? String,
             let activeImageEndpoint = activeJSONDictionary[activeImageURLKey] as? String,
-            let activeDescriptionDict = activeJSONDictionary[activeDescriptionDictionaryKey] as? [[String: Any]],
-            let activeDescriptionText = activeDescriptionDict.map { (activeDescriptionNumberKey: $0) } as? String else { return nil }
+            let activeDescriptionDict = activeJSONDictionary[activeDescriptionDictionaryKey] as? [[String: Any]] else { return nil }
+        let activeDescriptionText = activeDescriptionDict.flatMap { $0["description"] as? String }
+        guard let activeDescription = activeDescriptionText.first else { print("description is nil"); return nil }
         
         self.nameText = activeEventText
+        self.descriptionText = activeDescription
         self.imageEndpoint = activeImageEndpoint
-        self.descriptionText = activeDescriptionText
-        self.date = ""
     }
 }
 
