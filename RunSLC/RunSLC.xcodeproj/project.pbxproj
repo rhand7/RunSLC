@@ -7,14 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A4633371F1D1CCF00446878 /* MyPlansTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4633361F1D1CCF00446878 /* MyPlansTableViewCell.swift */; };
+		2A689BD11F16B4EC0057B69D /* MyPlansTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A689BD01F16B4EC0057B69D /* MyPlansTableViewController.swift */; };
+		2A689BDB1F17EA390057B69D /* Event.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2A689BD91F17EA390057B69D /* Event.xcdatamodeld */; };
+		2A689BDD1F17F4660057B69D /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A689BDC1F17F4660057B69D /* CoreDataStack.swift */; };
+		2A689BDF1F17F4A10057B69D /* EventPersistence + Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A689BDE1F17F4A10057B69D /* EventPersistence + Convenience.swift */; };
+		2A689BED1F181CA60057B69D /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A689BEC1F181CA60057B69D /* Event.swift */; };
 		2AFD83401F0BE2EA00274EF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFD833F1F0BE2EA00274EF6 /* AppDelegate.swift */; };
 		2AFD83451F0BE2EA00274EF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AFD83431F0BE2EA00274EF6 /* Main.storyboard */; };
 		2AFD83471F0BE2EA00274EF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AFD83461F0BE2EA00274EF6 /* Assets.xcassets */; };
 		2AFD834A1F0BE2EA00274EF6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AFD83481F0BE2EA00274EF6 /* LaunchScreen.storyboard */; };
-		2AFD83591F0BE3D400274EF6 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFD83581F0BE3D400274EF6 /* Event.swift */; };
 		2AFD835B1F0BE3DD00274EF6 /* EventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFD835A1F0BE3DD00274EF6 /* EventController.swift */; };
 		2AFD835D1F0BE46600274EF6 /* EventsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFD835C1F0BE46600274EF6 /* EventsListTableViewController.swift */; };
-		2AFD835F1F0BE4AB00274EF6 /* MyPlansViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFD835E1F0BE4AB00274EF6 /* MyPlansViewController.swift */; };
 		2AFD83611F0BE4CD00274EF6 /* EventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFD83601F0BE4CD00274EF6 /* EventsTableViewCell.swift */; };
 		2AFD83641F0BF05700274EF6 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFD83631F0BF05700274EF6 /* NetworkController.swift */; };
 		2AFD83661F0D4F2D00274EF6 /* ImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFD83651F0D4F2D00274EF6 /* ImageController.swift */; };
@@ -22,16 +26,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2A4633361F1D1CCF00446878 /* MyPlansTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPlansTableViewCell.swift; sourceTree = "<group>"; };
+		2A689BD01F16B4EC0057B69D /* MyPlansTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPlansTableViewController.swift; sourceTree = "<group>"; };
+		2A689BDA1F17EA390057B69D /* Event.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Event.xcdatamodel; sourceTree = "<group>"; };
+		2A689BDC1F17F4660057B69D /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		2A689BDE1F17F4A10057B69D /* EventPersistence + Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EventPersistence + Convenience.swift"; sourceTree = "<group>"; };
+		2A689BEC1F181CA60057B69D /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		2AFD833C1F0BE2EA00274EF6 /* RunSLC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunSLC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AFD833F1F0BE2EA00274EF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2AFD83441F0BE2EA00274EF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2AFD83461F0BE2EA00274EF6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2AFD83491F0BE2EA00274EF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2AFD834B1F0BE2EA00274EF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2AFD83581F0BE3D400274EF6 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		2AFD835A1F0BE3DD00274EF6 /* EventController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventController.swift; sourceTree = "<group>"; };
 		2AFD835C1F0BE46600274EF6 /* EventsListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsListTableViewController.swift; sourceTree = "<group>"; };
-		2AFD835E1F0BE4AB00274EF6 /* MyPlansViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPlansViewController.swift; sourceTree = "<group>"; };
 		2AFD83601F0BE4CD00274EF6 /* EventsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTableViewCell.swift; sourceTree = "<group>"; };
 		2AFD83631F0BF05700274EF6 /* NetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		2AFD83651F0D4F2D00274EF6 /* ImageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageController.swift; sourceTree = "<group>"; };
@@ -49,6 +57,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A689BD81F17E9F60057B69D /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				2A689BDC1F17F4660057B69D /* CoreDataStack.swift */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
 		2AFD83331F0BE2EA00274EF6 = {
 			isa = PBXGroup;
 			children = (
@@ -70,6 +86,7 @@
 			children = (
 				2AFD833F1F0BE2EA00274EF6 /* AppDelegate.swift */,
 				2AFD83511F0BE30500274EF6 /* Storyboards */,
+				2A689BD81F17E9F60057B69D /* CoreData */,
 				2AFD83621F0BF03C00274EF6 /* Controllers */,
 				2AFD83571F0BE34900274EF6 /* Models */,
 				2AFD83551F0BE33400274EF6 /* ModelControllers */,
@@ -102,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				2AFD83601F0BE4CD00274EF6 /* EventsTableViewCell.swift */,
+				2A4633361F1D1CCF00446878 /* MyPlansTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -111,7 +129,7 @@
 			children = (
 				2AFD835C1F0BE46600274EF6 /* EventsListTableViewController.swift */,
 				2AFD83671F0D63CF00274EF6 /* EventDetailViewController.swift */,
-				2AFD835E1F0BE4AB00274EF6 /* MyPlansViewController.swift */,
+				2A689BD01F16B4EC0057B69D /* MyPlansTableViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -128,7 +146,9 @@
 		2AFD83571F0BE34900274EF6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				2AFD83581F0BE3D400274EF6 /* Event.swift */,
+				2A689BD91F17EA390057B69D /* Event.xcdatamodeld */,
+				2A689BDE1F17F4A10057B69D /* EventPersistence + Convenience.swift */,
+				2A689BEC1F181CA60057B69D /* Event.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -214,15 +234,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2AFD835F1F0BE4AB00274EF6 /* MyPlansViewController.swift in Sources */,
-				2AFD83591F0BE3D400274EF6 /* Event.swift in Sources */,
 				2AFD83401F0BE2EA00274EF6 /* AppDelegate.swift in Sources */,
+				2A689BDF1F17F4A10057B69D /* EventPersistence + Convenience.swift in Sources */,
 				2AFD83681F0D63CF00274EF6 /* EventDetailViewController.swift in Sources */,
 				2AFD835D1F0BE46600274EF6 /* EventsListTableViewController.swift in Sources */,
 				2AFD83611F0BE4CD00274EF6 /* EventsTableViewCell.swift in Sources */,
 				2AFD83641F0BF05700274EF6 /* NetworkController.swift in Sources */,
+				2A689BDD1F17F4660057B69D /* CoreDataStack.swift in Sources */,
+				2A4633371F1D1CCF00446878 /* MyPlansTableViewCell.swift in Sources */,
+				2A689BDB1F17EA390057B69D /* Event.xcdatamodeld in Sources */,
 				2AFD835B1F0BE3DD00274EF6 /* EventController.swift in Sources */,
+				2A689BD11F16B4EC0057B69D /* MyPlansTableViewController.swift in Sources */,
 				2AFD83661F0D4F2D00274EF6 /* ImageController.swift in Sources */,
+				2A689BED1F181CA60057B69D /* Event.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,8 +410,22 @@
 				2AFD83501F0BE2EA00274EF6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2A689BD91F17EA390057B69D /* Event.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2A689BDA1F17EA390057B69D /* Event.xcdatamodel */,
+			);
+			currentVersion = 2A689BDA1F17EA390057B69D /* Event.xcdatamodel */;
+			path = Event.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 2AFD83341F0BE2EA00274EF6 /* Project object */;
 }

@@ -13,19 +13,34 @@ class EventsListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         EventController.fetchEventbriteEvents { (events) in
-            
             var eventResults: [Event] = []
-            
             eventResults.append(contentsOf: events)
             
             EventController.fetchActiveEvents { (events) in
-                
                 eventResults.append(contentsOf: events)
-                
                 self.eventResults = eventResults
+                
+                
+                // create group
+                let imageGroup = DispatchGroup()
+                for event in self.eventResults {
+                    // enter
+                    imageGroup.enter()
+                    EventController.fetchEventImage(event: event, completion: {
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                        }
+                        // leave
+                        imageGroup.leave()
+                    })
+                }
             }
         }
     }
+    
+    //    // reload the tableview cell that corresponds to the event
+    //
+    //    // Or you could reload the whole tableview if you want to be lazy
     
     var eventResults = [Event]() {
         didSet {
