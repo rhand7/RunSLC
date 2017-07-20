@@ -28,18 +28,20 @@ class MyPlansTableViewCell: UITableViewCell {
         delegate?.didTapCompleteButton(sender: self)
     }
     
-    // TODO: - dateFormatter 
-//    func stringValue() -> String {
-//        let dateFormatter = DateFormatter()
-//        dateFormatter.dateStyle = .medium
-//        return dateFormatter.string(for: event?.date)!
-//    }
-    
+        
     // MARK: updateViews
     func updateViews() {
         guard let event = event else { return }
         myPlansEventNameLabel.text = event.nameText
-        myPlansEventDateLabel.text = event.date
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        guard let stringFromAPI = event.date else { return }
+        let eventDate = dateFormatter.date(from: stringFromAPI)
+        
+        dateFormatter.dateStyle = .medium
+        
+        myPlansEventDateLabel.text = "\(dateFormatter.string(from: eventDate!))"
         
         
         if event.isCompleted == false {

@@ -11,6 +11,8 @@ import CoreData
 import SafariServices
 
 
+var heightOfHeader: CGFloat = 44
+
 class MyPlansTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     
     var eventPersistence: EventPersistence? 
@@ -67,6 +69,10 @@ class MyPlansTableViewController: UITableViewController, NSFetchedResultsControl
         } else {
             return "COMPLETED"
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return heightOfHeader
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
